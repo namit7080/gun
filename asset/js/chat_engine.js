@@ -5,7 +5,7 @@
         
         this.chatBox= $(`#${chatboxId}`);
         this.userEmail=useremail;
-        this.socket= io.connect('http://localhost:4000')
+        this.socket= io.connect('http://65.0.81.23:4000')
        
         if(this.userEmail){
             // console.log(this.userEmail)
