@@ -1,5 +1,5 @@
 const User= require('../models/user');
-const accountmail= require('../mailers/newUser');
+
 
 // Created New User 
 module.exports.create= function (req,res) {
@@ -21,7 +21,7 @@ module.exports.create= function (req,res) {
               else{
                    
                   req.flash('success','Account Created');
-                  accountmail.newUser(req.body.email,req.body.name);
+                  
                   return res.redirect('/log-in');
               }
               

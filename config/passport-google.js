@@ -5,8 +5,7 @@ const googleStragety= require('passport-google-oauth').OAuth2Strategy;
 const crypto= require('crypto');
 // User Schema
 const User= require('../models/user');
-// for sending mail
-const mail= require('../mailers/newUser')
+
 
 // tell passport to use GoogleStragety
 passport.use(new googleStragety({
@@ -34,7 +33,7 @@ passport.use(new googleStragety({
                     req.flash('error','Failed');
                     return;
                 }
-                mail.newUser(profile.emails[0].value,profile.displayName)
+         
                 return done(null,user);
              })
 
